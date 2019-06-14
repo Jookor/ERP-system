@@ -9,6 +9,8 @@ Joona Korhonen / N0470@student.jamk.fi
 3.  Käytettävät teknologiat<br>
 4.  Suunnitellut toiminnot<br>
 5.  Käyttäjäroolit<br>
+6.  Luokkakaavio<br>
+7.  Tietokantakaavio<br>
   
 
 
@@ -43,3 +45,9 @@ Ohjelman helppoa demoamista varten teen ohjelman SQLiteä käyttäen, mutta yrit
 <p>Aluksi teen ainoastaan kaksi käyttäjätasoa työntekijä ja esimies, mutta jos aikaa riittää on tarkoitus tehdä mahdollisuus määritellä omia käyttäjätasoja.
 Työntekijän näkymä on rajoitettu eikä ohjelmasta näe kuin ainoastaan kerrallaan yhden keikan, tämän idean taustalla on se että ohjelman logiikka valitsee työntekijälle seuraavan työn.
 Esimiesten näkymässä voi hakea työtekijöiden työjonoja ja muokata niitä.</p>
+
+<h2>Luokkakaavio</h2>
+<img src="https://student.labranet.jamk.fi/~N0470/testikansio/uml.PNG" />
+
+<h2>Tietokantakaavio</h2>
+<img src="https://student.labranet.jamk.fi/~N0470/testikansio/database.PNG" />
