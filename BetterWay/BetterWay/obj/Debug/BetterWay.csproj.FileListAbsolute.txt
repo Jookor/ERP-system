@@ -74,10 +74,10 @@ D:\Project\BetterWay\BetterWay\obj\Debug\BetterWay.csproj.CopyComplete
 D:\Project\BetterWay\BetterWay\obj\Debug\BetterWay.exe
 D:\Project\BetterWay\BetterWay\obj\Debug\BetterWay.pdb
 D:\Project\BetterWay\BetterWay\obj\Debug\BetterWay.csprojAssemblyReference.cache
+D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\BetterWay.pdb
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\database.db
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\BetterWay.exe.config
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\BetterWay.exe
-D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\BetterWay.pdb
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\EntityFramework.dll
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\EntityFramework.SqlServer.dll
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\System.Data.SQLite.dll
@@ -87,13 +87,13 @@ D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\EntityFram
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\EntityFramework.SqlServer.xml
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\System.Data.SQLite.xml
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\System.Data.SQLite.dll.config
-D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\BetterWay.csprojAssemblyReference.cache
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Login.g.cs
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\MainWindow.g.cs
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\AddCustomerView.g.cs
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\AddDealerView.g.cs
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\AddModelView.g.cs
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\CasePrintView.g.cs
+D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\CaseSolutionView.g.cs
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\EditCustomerInfoView.g.cs
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\EditDeviceInfoView.g.cs
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\LogisticView.g.cs
@@ -124,6 +124,7 @@ D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\AddC
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\AddDealerView.baml
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\AddModelView.baml
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\CasePrintView.baml
+D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\CaseSolutionView.baml
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\EditCustomerInfoView.baml
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\EditDeviceInfoView.baml
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\LogisticView.baml
@@ -150,5 +151,3 @@ D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\BetterWay.
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\BetterWay.csproj.CopyComplete
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\BetterWay.exe
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\BetterWay.pdb
-D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\CaseSolutionView.g.cs
-D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\CaseSolutionView.baml

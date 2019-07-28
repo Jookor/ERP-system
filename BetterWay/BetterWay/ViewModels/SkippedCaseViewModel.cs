@@ -12,7 +12,7 @@ namespace BetterWay.ViewModels
         public static void LogSkippedCase(int caseId, int userId, string description)
         {
             string query = $"INSERT INTO Skippedcases (CaseId,Description,UserId)" +
-                           $"VALUES ({caseId},'{description}',{userId})";
+                           $"VALUES ({caseId},'{description}',{userId});";
             try
             {
                 DA.AddToDb(query);

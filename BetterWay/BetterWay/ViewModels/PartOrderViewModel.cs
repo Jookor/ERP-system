@@ -12,7 +12,7 @@ namespace BetterWay.ViewModels
     {
         public static DataTable GetPartOrderLogs(int id)
         {
-            string request = $"SELECT Partnumber,Quantity,Orderdate FROM Partorders WHERE CaseId={id}";
+            string request = $"SELECT Partnumber,Quantity,Orderdate FROM Partorders WHERE CaseId={id};";
             return DA.GetDtFromDb(request);
         }
 
@@ -20,8 +20,8 @@ namespace BetterWay.ViewModels
         {
             string request = "INSERT INTO Partorders (Partnumber,Quantity,Caseid,Orderdate,Delivered)" +
                              $"VALUES ('{partnumber}',{quantity},{id},Date('now'),0);" +
-                             $"UPDATE WorkOrder SET PartsOnOrder={numberOfParts} WHERE Id={id}; " +
-                             $"INSERT INTO Logs (CaseId,Action,Date) VALUES ({id},'Waiting parts',DATE('now'))";
+                             $"UPDATE WorkOrder SET PartsOnOrder={numberOfParts}, Status='Waiting parts' WHERE Id={id}; " +
+                             $"INSERT INTO Logs (CaseId,Action,Date) VALUES ({id},'Waiting parts',DATE('now'));";
             try
             {
                 DA.AddToDb(request);

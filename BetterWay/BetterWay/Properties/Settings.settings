@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="Database" Type="System.String" Scope="User">
-      <Value Profile="(Default)">D:\Project\BetterWay\database.db</Value>
+      <Value Profile="(Default)">D:\Tietokanta\database.db</Value>
     </Setting>
   </Settings>
 </SettingsFile>

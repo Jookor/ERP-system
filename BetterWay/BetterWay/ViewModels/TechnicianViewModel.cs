@@ -14,7 +14,7 @@ namespace BetterWay.ViewModels
         public static List<Case> GetWorkOrders(string status)
         {
             List<Case> workorders = new List<Case>();
-            string request = $"SELECT * FROM WorkOrder WHERE Status={status} LIMIT 10";
+            string request = $"SELECT * FROM WorkOrder WHERE Status={status} LIMIT 10;";
             DataTable temp = DA.GetDtFromDb(request);
             
             foreach (DataRow dr in temp.Rows)
@@ -39,7 +39,7 @@ namespace BetterWay.ViewModels
 
         public static Case GetWorkOrder(int id)
         {
-            string request = $"SELECT Id,BrandName,ModelName,SerialNumber,UserId,Fault,DealerId,CustomerId,Warranty,PartsOnOrder FROM WorkOrder WHERE Id={id}";
+            string request = $"SELECT Id,BrandName,ModelName,SerialNumber,UserId,Fault,DealerId,CustomerId,Warranty,PartsOnOrder FROM WorkOrder WHERE Id={id};";
             try
             {
                 DataTable temp = DA.GetDtFromDb(request);
@@ -103,7 +103,7 @@ namespace BetterWay.ViewModels
         {
             if (!status.Equals("Waiting parts"))
             {
-                string request = $"UPDATE WorkOrder SET Status='{status}' WHERE Id={job.Id}";
+                string request = $"UPDATE WorkOrder SET Status='{status}' WHERE Id={job.Id};";
                 try
                 {
                     DA.AddToDb(request);
@@ -118,7 +118,7 @@ namespace BetterWay.ViewModels
             else
             {
                 int newCount = job.NumberOfOrderedParts + 1;
-                string request = $"UPDATE WorkOrder SET Status='{status}', PartsOnOrder={newCount} WHERE Id={job.Id}";
+                string request = $"UPDATE WorkOrder SET Status='{status}', PartsOnOrder={newCount} WHERE Id={job.Id};";
                 try
                 {
                     DA.AddToDb(request);
@@ -134,7 +134,7 @@ namespace BetterWay.ViewModels
 
         public static void LogStatusChange(int caseid,string status)
         {
-            string request = $"INSERT INTO Logs (CaseId,Action,Date) VALUES ({caseid},'{status}',DATE('now'))";
+            string request = $"INSERT INTO Logs (CaseId,Action,Date) VALUES ({caseid},'{status}',DATE('now'));";
             try
             {
                 DA.AddToDb(request);
@@ -150,7 +150,7 @@ namespace BetterWay.ViewModels
 
         public static void ChangeCaseStatus(int caseid, string status)
         {
-            string query = $"UPDATE WorkOrder SET Status='{status}' WHERE Id={caseid}";
+            string query = $"UPDATE WorkOrder SET Status='{status}' WHERE Id={caseid};";
             try
             {
                 DA.AddToDb(query);

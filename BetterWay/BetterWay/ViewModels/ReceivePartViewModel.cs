@@ -12,7 +12,7 @@ namespace BetterWay.ViewModels
         public static void SetReceived(Part part,Case job)
         {
             string query = $"UPDATE Partorders SET Delivered=1 WHERE Id={part.Id};" +
-                           $"UPDATE WorkOrder SET PartsOnOrder={job.NumberOfOrderedParts-1} WHERE Id={part.CaseId}";
+                           $"UPDATE WorkOrder SET PartsOnOrder={job.NumberOfOrderedParts-1} WHERE Id={part.CaseId};";
 
             try
             {
