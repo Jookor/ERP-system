@@ -24,7 +24,7 @@ namespace BetterWay.Models
         public int NumberOfOrderedParts { get; set; }
         public string DeviceInfo { get { return Brand + " " + Model; } }
 
-
+        //Gets the owner and dealer names from database and sets them to this object
         public void GetNamesById()
         {
             try

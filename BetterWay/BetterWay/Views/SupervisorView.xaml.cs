@@ -21,28 +21,29 @@ namespace BetterWay.Views
     /// </summary>
     public partial class SupervisorView : UserControl
     {
-        public User LoggedUser { get; set; }
+        private User loggedUser;
         public SupervisorView()
         {
             InitializeComponent();
         }
-
+        //Gets the user who logged in and sets the comingcasesview as an default view
         public SupervisorView(User user)
         {
             InitializeComponent();
-            LoggedUser = user;
+            loggedUser = user;
+            ccSupervisorView.Content = new SupervisorComingCasesView();
         }
-
+        //Gets the comingcasesview 
         private void BtnUpComingCases_Click(object sender, RoutedEventArgs e)
         {
             ccSupervisorView.Content = new SupervisorComingCasesView();
         }
-
+        //Gets the skippedcasesview
         private void BtnSkippedCases_Click(object sender, RoutedEventArgs e)
         {
             ccSupervisorView.Content = new SupervisorSkippedCaseView();
         }
-
+        //Gets the readycasesview
         private void BtnReadyCases_Click(object sender, RoutedEventArgs e)
         {
             ccSupervisorView.Content = new SupervisorReadyCaseView();

@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Project\BetterWay\BetterWay\obj\Debug\
+D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\
 BetterWay
 none
 false
 DEBUG;TRACE
-D:\Project\BetterWay\BetterWay\App.xaml
+D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\App.xaml
 251603159927
 1-1184298625
 53-1787686278
-19-1602761907
+19-2036710090
 Login.xaml;MainWindow.xaml;Views\AddCustomerView.xaml;Views\AddDealerView.xaml;Views\AddModelView.xaml;Views\CasePrintView.xaml;Views\EditCustomerInfoView.xaml;Views\EditDeviceInfoView.xaml;Views\LogisticView.xaml;Views\OrderMadeView.xaml;Views\PartOrderView.xaml;Views\ReceivePartView.xaml;Views\SendMessageView.xaml;Views\SetCaseReadyView.xaml;Views\SkippedCaseHandlingView.xaml;Views\SkippedCaseView.xaml;Views\SupervisorComingCasesView.xaml;Views\SupervisorReadyCaseView.xaml;Views\SupervisorSkippedCaseView.xaml;Views\SupervisorView.xaml;Views\TechnicianCurrentCaseView.xaml;Views\TechnicianView.xaml;Views\UpdateCaseView.xaml;Views\UpdateCustomerView.xaml;Views\UpdateDealerView.xaml;
 
 False

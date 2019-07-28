@@ -10,6 +10,7 @@ namespace BetterWay.Models
 {
     public class DA
     {
+        //Gets data from database and return User object
         public static User GetUserFromDb(string request)
         {
             try
@@ -41,7 +42,7 @@ namespace BetterWay.Models
                 throw;
             }
         }
-
+        //Gets data from database and returns string
         public static string GetStringFromDb(string request)
         {
             try
@@ -69,7 +70,7 @@ namespace BetterWay.Models
                 throw;
             }
         }
-
+        //Gets data from database and returns int
         public static int GetIntFromDb(string request)
         {
             try
@@ -97,7 +98,7 @@ namespace BetterWay.Models
                 throw;
             }
         }
-
+        //Writes to database
         public static void AddToDb(string sqlrequest)
         {
             string filename = BetterWay.Properties.Settings.Default.Database;
@@ -124,7 +125,7 @@ namespace BetterWay.Models
                 throw;
             }
         }
-
+        //Gets DataTable from database
         public static DataTable GetDtFromDb(string sqlrequest)
         {
             string filename = BetterWay.Properties.Settings.Default.Database;
@@ -152,7 +153,7 @@ namespace BetterWay.Models
                 throw;
             }
         }
-
+        //Gets Customer object from database with customer name
         public static Customer GetCustomerFromDb(string name)
         {
             try
@@ -199,7 +200,7 @@ namespace BetterWay.Models
             }
 
         }
-
+        //Gets Customer object from database with customer id
         public static Customer GetCustomerFromDbWithId(int id)
         {
             try
