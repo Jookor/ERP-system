@@ -15,37 +15,11 @@ namespace BetterWay.ViewModels
         {
             List<Case> workorders = new List<Case>();
             string request = $"SELECT * FROM WorkOrder WHERE Status={status} LIMIT 10;";
-            DataTable temp = DA.GetDtFromDb(request);
-            
-            foreach (DataRow dr in temp.Rows)
+            using (DataTable temp = DA.GetDtFromDb(request))
             {
-                Case job = new Case();
-                job.Id = Convert.ToInt32(dr["Id"]);
-                job.Brand = dr["BrandName"].ToString();
-                job.Model = dr["ModelName"].ToString();
-                job.Serial = dr["SerialNumber"].ToString();
-                job.UserId = Convert.ToInt32(dr["UserId"]);
-                job.Fault = dr["Fault"].ToString();
-                job.DealerId = Convert.ToInt32(dr["DealerId"]);
-                job.ClientId = Convert.ToInt32(dr["CustomerId"]);
-                job.Warranty = dr["Warranty"].ToString();
-                job.PurchaseDate = dr["PurchaseDate"].ToString();
-                job.NumberOfOrderedParts = Convert.ToInt32(dr["PartsOnOrder"]);
-                job.GetNamesById();
-                workorders.Add(job);
-            }
-            return workorders;
-        }
-
-        public static Case GetWorkOrder(int id)
-        {
-            string request = $"SELECT Id,BrandName,ModelName,SerialNumber,UserId,Fault,DealerId,CustomerId,Warranty,PartsOnOrder FROM WorkOrder WHERE Id={id};";
-            try
-            {
-                DataTable temp = DA.GetDtFromDb(request);
-                Case job = new Case();
                 foreach (DataRow dr in temp.Rows)
                 {
+                    Case job = new Case();
                     job.Id = Convert.ToInt32(dr["Id"]);
                     job.Brand = dr["BrandName"].ToString();
                     job.Model = dr["ModelName"].ToString();
@@ -55,10 +29,39 @@ namespace BetterWay.ViewModels
                     job.DealerId = Convert.ToInt32(dr["DealerId"]);
                     job.ClientId = Convert.ToInt32(dr["CustomerId"]);
                     job.Warranty = dr["Warranty"].ToString();
+                    job.PurchaseDate = dr["PurchaseDate"].ToString();
                     job.NumberOfOrderedParts = Convert.ToInt32(dr["PartsOnOrder"]);
                     job.GetNamesById();
+                    workorders.Add(job);
                 }
-                return job;
+                return workorders;
+            }
+        }
+
+        public static Case GetWorkOrder(int id)
+        {
+            string request = $"SELECT * FROM WorkOrder WHERE Id={id};";
+            try
+            {
+                using (DataTable temp = DA.GetDtFromDb(request))
+                {
+                    Case job = new Case();
+                    foreach (DataRow dr in temp.Rows)
+                    {
+                        job.Id = Convert.ToInt32(dr["Id"]);
+                        job.Brand = dr["BrandName"].ToString();
+                        job.Model = dr["ModelName"].ToString();
+                        job.Serial = dr["SerialNumber"].ToString();
+                        job.UserId = Convert.ToInt32(dr["UserId"]);
+                        job.Fault = dr["Fault"].ToString();
+                        job.DealerId = Convert.ToInt32(dr["DealerId"]);
+                        job.ClientId = Convert.ToInt32(dr["CustomerId"]);
+                        job.Warranty = dr["Warranty"].ToString();
+                        job.NumberOfOrderedParts = Convert.ToInt32(dr["PartsOnOrder"]);
+                        job.GetNamesById();
+                    }
+                    return job;
+                }
             }
             catch (Exception)
             {

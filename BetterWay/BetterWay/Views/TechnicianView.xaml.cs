@@ -39,7 +39,7 @@ namespace BetterWay.Views
         private void LsvComingCases_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //Set selected case to selected variable
-            //selected = (Case)lsvComingCases.SelectedItem;
+            selected = (Case)lsvComingCases.SelectedItem;
             //Set the selected variable to stackpanel
             spDeviceData.DataContext = selected;
         }
@@ -48,11 +48,10 @@ namespace BetterWay.Views
         private void UpdateComingList(object sender, RoutedEventArgs e)
         {
             //Sets DataTable to listview 
-            //lsvComingCases.DataContext = TechnicianViewModel.GetWorkOrders("'Registered'");
+            lsvComingCases.DataContext = TechnicianViewModel.GetWorkOrders("'Registered'");
             //Sets selected item to the first item
-            //lsvComingCases.SelectedIndex = 0;
-            selected = TechnicianViewModel.GetNextCaseInLine();
-            spDeviceData.DataContext = selected;
+            lsvComingCases.SelectedIndex = 0;
+            
         }
         
         //Setting case to diagnose status and show the started case
@@ -69,7 +68,15 @@ namespace BetterWay.Views
             }
             TechnicianCurrentCaseView view = new TechnicianCurrentCaseView(selected, LoggedUser);
             view.Show();
-            UpdateComingList(sender, e);
+            try
+            {
+                UpdateComingList(sender, e);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
             //lsvComingCases.DataContext = TechnicianViewModel.GetWorkOrders("'Registered'");
             //lsvComingCases.SelectedIndex = 0;
         }

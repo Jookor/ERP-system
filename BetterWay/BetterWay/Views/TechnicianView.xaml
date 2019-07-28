@@ -15,21 +15,22 @@
     </UserControl.Resources>
     <Grid>
         <TabControl TabStripPlacement="Left">
-            <TabItem Header="Etusivu">
+            <TabItem Header="Etusivu" Height="40">
                 <StackPanel>
                     <TextBlock Text="Etsi työtilausta: " Margin="10"/>
                     <TextBox x:Name="txtCaseId" Margin="10"/>
                     <Button x:Name="btnSearch" Content="Hae" Click="BtnSearch_Click" Margin="10"/>
                 </StackPanel>
             </TabItem>
-            <TabItem x:Name="tiComing" Header="Seuraava työtilaus" Loaded="UpdateComingList">
-                <StackPanel Orientation="Horizontal">
-                    <!--
-                    <StackPanel>
-                        <ListView x:Name="lsvComingCases" ItemsSource="{Binding}" ItemTemplate="{StaticResource deviceInfo}" SelectionChanged="LsvComingCases_SelectionChanged" />
+            <TabItem x:Name="tiComing" Header="Seuraava työtilaus" Height="40" Loaded="UpdateComingList">
+                <StackPanel Orientation="Horizontal" Margin="15">
+                    
+                    <StackPanel Width="200">
+                        <TextBlock Text="Työjono" FontWeight="Bold" />
+                        <ListView x:Name="lsvComingCases" BorderThickness="0"  ItemsSource="{Binding}" ItemTemplate="{StaticResource deviceInfo}" SelectionChanged="LsvComingCases_SelectionChanged" />
                     </StackPanel>
-                    -->
-                    <StackPanel x:Name="spDeviceData" Loaded="UpdateComingList">
+                   
+                    <StackPanel x:Name="spDeviceData">
                         <StackPanel>
                             <TextBlock Text="Työnumero: " />
                             <TextBlock Text="{Binding Id}" />
@@ -53,7 +54,7 @@
                     </StackPanel>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Työnalla">
+            <TabItem Header="Työnalla" Height="40">
                 <StackPanel Orientation="Horizontal" Loaded="UpdateCurrentWorkOrderList" >
                     <StackPanel Width="200" Margin="15">
                         <TextBlock Text="Työnalla olevat työtilaukset: " FontWeight="Bold"/>
@@ -79,7 +80,7 @@
                     </StackPanel>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Odottaa osia">
+            <TabItem Header="Odottaa osia" Height="40">
                 <StackPanel Orientation="Horizontal" Loaded="StackPanel_Loaded">
                     <StackPanel>
                         <ListView x:Name="lsvWaitingPartOrders" BorderThickness="0" ItemsSource="{Binding}" ItemTemplate="{StaticResource deviceInfo}" SelectionChanged="LsvWaitingPartOrders_SelectionChanged" MouseDoubleClick="ShowCurrentCase"/>
@@ -104,7 +105,7 @@
                     </StackPanel>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Osat saapuneet">
+            <TabItem Header="Osat saapuneet" Height="40">
                 <StackPanel Loaded="StackPanel_Loaded_1" Orientation="Horizontal">
                     <StackPanel>
                         <ListView x:Name="lsvPartsDeliveredOrders" BorderThickness="0" ItemsSource="{Binding}" ItemTemplate="{StaticResource deviceInfo}" SelectionChanged="LsvPartsDeliveredOrders_SelectionChanged" MouseDoubleClick="ShowCurrentCase"/>
@@ -127,7 +128,7 @@
                     </StackPanel>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Odottaa hyvitystä">
+            <TabItem Header="Odottaa hyvitystä" Height="40">
                 <StackPanel Orientation="Horizontal" Loaded="StackPanel_Loaded_2" >
                 <StackPanel>
                         <ListView x:Name="lsvWaitingCreditOrders" BorderThickness="0" ItemsSource="{Binding}" ItemTemplate="{StaticResource deviceInfo}" SelectionChanged="LsvWaitingCreditOrders_SelectionChanged" MouseDoubleClick="ShowCurrentCase"/>
@@ -150,7 +151,7 @@
                 </StackPanel>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Kustannusarvio annettu">
+            <TabItem Header="Kustannusarvio annettu" Height="40">
                 <StackPanel Orientation="Horizontal" Loaded="StackPanel_Loaded_3" >
                     <StackPanel>
                         <ListView x:Name="lsvCostEstimateOrders" BorderThickness="0" ItemsSource="{Binding}" ItemTemplate="{StaticResource deviceInfo}" SelectionChanged="LsvCostEstimateOrders_SelectionChanged"  MouseDoubleClick="ShowCurrentCase"/>
@@ -173,7 +174,7 @@
                     </StackPanel>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Odottaa vastausta asiakkaalta">
+            <TabItem Header="Odottaa vastausta asiakkaalta" Height="40">
                 <StackPanel Orientation="Horizontal" Loaded="StackPanel_Loaded_4" >
                     <StackPanel>
                         <ListView x:Name="lsvWaitingCustomerOrders" BorderThickness="0" ItemsSource="{Binding}" ItemTemplate="{StaticResource deviceInfo}" SelectionChanged="LsvWaitingCustomerOrders_SelectionChanged" MouseDoubleClick="ShowCurrentCase"/>

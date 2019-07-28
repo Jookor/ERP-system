@@ -109,8 +109,10 @@ namespace BetterWay.Models
                     using (SQLiteConnection conn = new SQLiteConnection($"Data source={filename}"))
                     {
                         conn.Open();
-                        SQLiteCommand command = new SQLiteCommand(sqlrequest, conn);
-                        command.ExecuteNonQuery();
+                        using (SQLiteCommand command = new SQLiteCommand(sqlrequest, conn))
+                        {
+                            command.ExecuteNonQuery();
+                        }
                         conn.Close();
                     }
                 }
@@ -136,10 +138,13 @@ namespace BetterWay.Models
                     using (SQLiteConnection conn = new SQLiteConnection($"Data source={filename}"))
                     {
                         conn.Open();
-                        SQLiteDataAdapter da = new SQLiteDataAdapter(sqlrequest, conn);
-                        DataTable dt = new DataTable();
-                        da.Fill(dt);
-                        return dt;
+                        using (SQLiteDataAdapter da = new SQLiteDataAdapter(sqlrequest, conn))
+                        {
+                            DataTable dt = new DataTable();
+                            da.Fill(dt);
+                            return dt;
+                        }
+                        
                     }
                 }
                 else
