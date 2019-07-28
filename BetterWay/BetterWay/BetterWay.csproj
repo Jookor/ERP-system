@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{88D6BDE1-F543-4777-9CB9-C91FE047BD57}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BetterWay</RootNamespace>
+    <AssemblyName>BetterWay</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.111.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.111.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.111.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.111.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.111.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.111.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Models\Case.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Part.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="ViewModels\AddCustomerViewModel.cs" />
+    <Compile Include="ViewModels\AddDealerViewModel.cs" />
+    <Compile Include="ViewModels\AddModelViewModel.cs" />
+    <Compile Include="ViewModels\EditCustomerInfoViewModel.cs" />
+    <Compile Include="ViewModels\EditDeviceInfoViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\LogisticViewModel.cs" />
+    <Compile Include="ViewModels\OrderMadeViewModel.cs" />
+    <Compile Include="ViewModels\PartOrderViewModel.cs" />
+    <Compile Include="ViewModels\ReceivePartViewModel.cs" />
+    <Compile Include="ViewModels\SendMessageViewModel.cs" />
+    <Compile Include="ViewModels\SetCaseReadyViewModel.cs" />
+    <Compile Include="ViewModels\SkippedCaseHandlingViewModel.cs" />
+    <Compile Include="ViewModels\SkippedCaseViewModel.cs" />
+    <Compile Include="ViewModels\SupervisorViewModel.cs" />
+    <Compile Include="ViewModels\TechnicianCurrentCaseViewModel.cs" />
+    <Compile Include="ViewModels\TechnicianViewModel.cs" />
+    <Compile Include="ViewModels\UpdateCustomerViewModel.cs" />
+    <Compile Include="ViewModels\UpdateDealerViewModel.cs" />
+    <Compile Include="Views\AddCustomerView.xaml.cs">
+      <DependentUpon>AddCustomerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddDealerView.xaml.cs">
+      <DependentUpon>AddDealerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddModelView.xaml.cs">
+      <DependentUpon>AddModelView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CasePrintView.xaml.cs">
+      <DependentUpon>CasePrintView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditCustomerInfoView.xaml.cs">
+      <DependentUpon>EditCustomerInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditDeviceInfoView.xaml.cs">
+      <DependentUpon>EditDeviceInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LogisticView.xaml.cs">
+      <DependentUpon>LogisticView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrderMadeView.xaml.cs">
+      <DependentUpon>OrderMadeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartOrderView.xaml.cs">
+      <DependentUpon>PartOrderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReceivePartView.xaml.cs">
+      <DependentUpon>ReceivePartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SendMessageView.xaml.cs">
+      <DependentUpon>SendMessageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SetCaseReadyView.xaml.cs">
+      <DependentUpon>SetCaseReadyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SkippedCaseHandlingView.xaml.cs">
+      <DependentUpon>SkippedCaseHandlingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SkippedCaseView.xaml.cs">
+      <DependentUpon>SkippedCaseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SupervisorComingCasesView.xaml.cs">
+      <DependentUpon>SupervisorComingCasesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SupervisorReadyCaseView.xaml.cs">
+      <DependentUpon>SupervisorReadyCaseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SupervisorSkippedCaseView.xaml.cs">
+      <DependentUpon>SupervisorSkippedCaseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SupervisorView.xaml.cs">
+      <DependentUpon>SupervisorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TechnicianCurrentCaseView.xaml.cs">
+      <DependentUpon>TechnicianCurrentCaseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TechnicianView.xaml.cs">
+      <DependentUpon>TechnicianView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateCaseView.xaml.cs">
+      <DependentUpon>UpdateCaseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateCustomerView.xaml.cs">
+      <DependentUpon>UpdateCustomerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateDealerView.xaml.cs">
+      <DependentUpon>UpdateDealerView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\AddCustomerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddDealerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddModelView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CasePrintView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditCustomerInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditDeviceInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LogisticView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OrderMadeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PartOrderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ReceivePartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SendMessageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SetCaseReadyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SkippedCaseHandlingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SkippedCaseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SupervisorComingCasesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SupervisorReadyCaseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SupervisorSkippedCaseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SupervisorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TechnicianCurrentCaseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TechnicianView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateCaseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateCustomerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateDealerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\DA.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="database.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.111.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.111.0\build\net46\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.111.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.111.0\build\net46\System.Data.SQLite.Core.targets'))" />
+  </Target>
+</Project>

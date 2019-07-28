@@ -1,0 +1,28 @@
+﻿<Window x:Class="BetterWay.Views.UpdateCaseView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BetterWay.Views"
+        mc:Ignorable="d"
+        Title="UpdateCaseView" Height="150" Width="300">
+    <Grid>
+        <StackPanel x:Name="spEditCase" Loaded="SpEditCase_Loaded" >
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="Laite: " Width="80" FontWeight="Bold"/>
+                <TextBlock Text="{Binding DeviceInfo}" Width="105"/>
+                <Button x:Name="btnEditDevice" Content="Muokkaa" Click="BtnEditDevice_Click" HorizontalAlignment="Right" Margin="5 0 0 0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="Asiakas: " Width="80" FontWeight="Bold"/>
+                <TextBlock Text="{Binding ClientName}" Width="105"/>
+                <Button x:Name="btnEditCustomer" Content="Muokkaa" Margin="5 0 0 0" Click="BtnEditCustomer_Click" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="Jälleenmyyjä: " Width="80" FontWeight="Bold"/>
+                <TextBlock Text="{Binding DealerName}" Width="105"/>
+                <Button x:Name="btnEditDealer" Content="Muokkaa" HorizontalAlignment="Right" Margin="5 0 0 0" Click="BtnEditDealer_Click" />
+            </StackPanel>
+        </StackPanel>    
+    </Grid>
+</Window>

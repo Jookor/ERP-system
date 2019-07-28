@@ -1,0 +1,202 @@
+﻿<UserControl x:Class="BetterWay.Views.TechnicianView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BetterWay.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <DataTemplate x:Key="deviceInfo">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding DeviceInfo}" />
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <TabControl TabStripPlacement="Left">
+            <TabItem Header="Etusivu">
+                <StackPanel>
+                    <TextBlock Text="Etsi työtilausta: " Margin="10"/>
+                    <TextBox x:Name="txtCaseId" Margin="10"/>
+                    <Button x:Name="btnSearch" Content="Hae" Click="BtnSearch_Click" Margin="10"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem x:Name="tiComing" Header="Seuraava työtilaus" Loaded="UpdateComingList">
+                <StackPanel Orientation="Horizontal">
+                    <!--
+                    <StackPanel>
+                        <ListView x:Name="lsvComingCases" ItemsSource="{Binding}" ItemTemplate="{StaticResource deviceInfo}" SelectionChanged="LsvComingCases_SelectionChanged" />
+                    </StackPanel>
+                    -->
+                    <StackPanel x:Name="spDeviceData" Loaded="UpdateComingList">
+                        <StackPanel>
+                            <TextBlock Text="Työnumero: " />
+                            <TextBlock Text="{Binding Id}" />
+                            <TextBlock Text="Asiakas:" />
+                            <TextBlock x:Name="txbCoCustName" Text="{Binding ClientName}" />
+                            <TextBlock Text="Laite: " />
+                            <TextBlock x:Name="txbCoUnit" Text="{Binding DeviceInfo}"/>
+                            <TextBlock Text="Sarjanumero: "/>
+                            <TextBlock x:Name="txbCoSerial" Text="{Binding Serial}" />
+                            <TextBlock Text="Ostopäivä: " />
+                            <TextBlock x:Name="txbCoPurchaseDate" Text="{Binding PurchaseDate}"/>
+                            <TextBlock Text="Takuu: " />
+                            <TextBlock x:Name="txbCoWarranty" Text="{Binding Warranty}"/>
+                            <TextBlock Text="Viankuvaus: "/>
+                            <TextBlock x:Name="txbCoFault" Text="{Binding Fault}"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="btnStart" Content="Aloita työ" Margin="10" Click="BtnStart_Click" />
+                                <Button x:Name="btnSkip" Content="Ohita työ" Margin="0 10 10 10" Click="BtnSkip_Click" />
+                            </StackPanel>    
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Työnalla">
+                <StackPanel Orientation="Horizontal" Loaded="UpdateCurrentWorkOrderList" >
+                    <StackPanel Width="200" Margin="15">
+                        <TextBlock Text="Työnalla olevat työtilaukset: " FontWeight="Bold"/>
+                        <ListView x:Name="lsvCurrentWorkOrders" BorderThickness="0" ItemsSource="{Binding}" ItemTemplate="{StaticResource deviceInfo}" SelectionChanged="LsvCurrentWorkOrders_SelectionChanged" MouseDoubleClick="ShowCurrentCase" />
+                    </StackPanel>
+                    <StackPanel x:Name="spCurrentOrders" Margin="15">
+                        <StackPanel Width="200">
+                            <TextBlock Text="Työnumero: " />
+                            <TextBlock Text="{Binding Id}" />
+                            <TextBlock Text="Asiakas:" />
+                            <TextBlock Text="{Binding ClientName}" />
+                            <TextBlock Text="Laite: " />
+                            <TextBlock Text="{Binding DeviceInfo}"/>
+                            <TextBlock Text="Sarjanumero: "/>
+                            <TextBlock Text="{Binding Serial}" />
+                            <TextBlock Text="Ostopäivä: " />
+                            <TextBlock Text="{Binding PurchaseDate}"/>
+                            <TextBlock Text="Takuu: " />
+                            <TextBlock Text="{Binding Warranty}"/>
+                            <TextBlock Text="Viankuvaus: "/>
+                            <TextBlock Text="{Binding Fault}" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Odottaa osia">
+                <StackPanel Orientation="Horizontal" Loaded="StackPanel_Loaded">
+                    <StackPanel>
+                        <ListView x:Name="lsvWaitingPartOrders" BorderThickness="0" ItemsSource="{Binding}" ItemTemplate="{StaticResource deviceInfo}" SelectionChanged="LsvWaitingPartOrders_SelectionChanged" MouseDoubleClick="ShowCurrentCase"/>
+                    </StackPanel>
+                    <StackPanel x:Name="spWaitingParts" >
+                        <TextBlock Text="Työnumero: " />
+                        <TextBlock Text="{Binding Id}" />
+                        <TextBlock Text="Asiakas:" />
+                        <TextBlock Text="{Binding ClientName}" />
+                        <TextBlock Text="Laite: " />
+                        <TextBlock Text="{Binding DeviceInfo}"/>
+                        <TextBlock Text="Sarjanumero: "/>
+                        <TextBlock Text="{Binding Serial}" />
+                        <TextBlock Text="Ostopäivä: " />
+                        <TextBlock Text="{Binding PurchaseDate}"/>
+                        <TextBlock Text="Takuu: " />
+                        <TextBlock Text="{Binding Warranty}"/>
+                        <TextBlock Text="Tilattujen osien lukumäärä: "/>
+                        <TextBlock Text="{Binding NumberOfOrderedParts}" />
+                        <TextBlock Text="Viankuvaus: "/>
+                        <TextBlock Text="{Binding Fault}" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Osat saapuneet">
+                <StackPanel Loaded="StackPanel_Loaded_1" Orientation="Horizontal">
+                    <StackPanel>
+                        <ListView x:Name="lsvPartsDeliveredOrders" BorderThickness="0" ItemsSource="{Binding}" ItemTemplate="{StaticResource deviceInfo}" SelectionChanged="LsvPartsDeliveredOrders_SelectionChanged" MouseDoubleClick="ShowCurrentCase"/>
+                    </StackPanel>
+                    <StackPanel x:Name="spPartsDelivered" >
+                        <TextBlock Text="Työnumero: " />
+                        <TextBlock Text="{Binding Id}" />
+                        <TextBlock Text="Asiakas:" />
+                        <TextBlock Text="{Binding ClientName}" />
+                        <TextBlock Text="Laite: " />
+                        <TextBlock Text="{Binding DeviceInfo}"/>
+                        <TextBlock Text="Sarjanumero: "/>
+                        <TextBlock Text="{Binding Serial}" />
+                        <TextBlock Text="Ostopäivä: " />
+                        <TextBlock Text="{Binding PurchaseDate}"/>
+                        <TextBlock Text="Takuu: " />
+                        <TextBlock Text="{Binding Warranty}"/>
+                        <TextBlock Text="Viankuvaus: "/>
+                        <TextBlock Text="{Binding Fault}" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Odottaa hyvitystä">
+                <StackPanel Orientation="Horizontal" Loaded="StackPanel_Loaded_2" >
+                <StackPanel>
+                        <ListView x:Name="lsvWaitingCreditOrders" BorderThickness="0" ItemsSource="{Binding}" ItemTemplate="{StaticResource deviceInfo}" SelectionChanged="LsvWaitingCreditOrders_SelectionChanged" MouseDoubleClick="ShowCurrentCase"/>
+                </StackPanel>
+                <StackPanel x:Name="spWaitingCredit" >
+                    <TextBlock Text="Työnumero: " />
+                    <TextBlock Text="{Binding Id}" />
+                    <TextBlock Text="Asiakas:" />
+                    <TextBlock Text="{Binding ClientName}" />
+                    <TextBlock Text="Laite: " />
+                    <TextBlock Text="{Binding DeviceInfo}"/>
+                    <TextBlock Text="Sarjanumero: "/>
+                    <TextBlock Text="{Binding Serial}" />
+                    <TextBlock Text="Ostopäivä: " />
+                    <TextBlock Text="{Binding PurchaseDate}"/>
+                    <TextBlock Text="Takuu: " />
+                    <TextBlock Text="{Binding Warranty}"/>
+                    <TextBlock Text="Viankuvaus: "/>
+                    <TextBlock Text="{Binding Fault}" TextWrapping="Wrap"/>
+                </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Kustannusarvio annettu">
+                <StackPanel Orientation="Horizontal" Loaded="StackPanel_Loaded_3" >
+                    <StackPanel>
+                        <ListView x:Name="lsvCostEstimateOrders" BorderThickness="0" ItemsSource="{Binding}" ItemTemplate="{StaticResource deviceInfo}" SelectionChanged="LsvCostEstimateOrders_SelectionChanged"  MouseDoubleClick="ShowCurrentCase"/>
+                    </StackPanel>
+                    <StackPanel x:Name="spCostEstimate" >
+                        <TextBlock Text="Työnumero: " />
+                        <TextBlock Text="{Binding Id}" />
+                        <TextBlock Text="Asiakas:" />
+                        <TextBlock Text="{Binding ClientName}" />
+                        <TextBlock Text="Laite: " />
+                        <TextBlock Text="{Binding DeviceInfo}"/>
+                        <TextBlock Text="Sarjanumero: "/>
+                        <TextBlock Text="{Binding Serial}" />
+                        <TextBlock Text="Ostopäivä: " />
+                        <TextBlock Text="{Binding PurchaseDate}"/>
+                        <TextBlock Text="Takuu: " />
+                        <TextBlock Text="{Binding Warranty}"/>
+                        <TextBlock Text="Viankuvaus: "/>
+                        <TextBlock Text="{Binding Fault}" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Odottaa vastausta asiakkaalta">
+                <StackPanel Orientation="Horizontal" Loaded="StackPanel_Loaded_4" >
+                    <StackPanel>
+                        <ListView x:Name="lsvWaitingCustomerOrders" BorderThickness="0" ItemsSource="{Binding}" ItemTemplate="{StaticResource deviceInfo}" SelectionChanged="LsvWaitingCustomerOrders_SelectionChanged" MouseDoubleClick="ShowCurrentCase"/>
+                    </StackPanel>
+                    <StackPanel x:Name="spWaitingCustomer" >
+                        <TextBlock Text="Työnumero: " />
+                        <TextBlock Text="{Binding Id}" />
+                        <TextBlock Text="Asiakas:" />
+                        <TextBlock Text="{Binding ClientName}" />
+                        <TextBlock Text="Laite: " />
+                        <TextBlock Text="{Binding DeviceInfo}"/>
+                        <TextBlock Text="Sarjanumero: "/>
+                        <TextBlock Text="{Binding Serial}" />
+                        <TextBlock Text="Ostopäivä: " />
+                        <TextBlock Text="{Binding PurchaseDate}"/>
+                        <TextBlock Text="Takuu: " />
+                        <TextBlock Text="{Binding Warranty}"/>
+                        <TextBlock Text="Viankuvaus: "/>
+                        <TextBlock Text="{Binding Fault}" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+        
+    </Grid>
+</UserControl>

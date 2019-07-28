@@ -1,0 +1,127 @@
+﻿<UserControl x:Class="BetterWay.Views.LogisticView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BetterWay.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <DataTemplate x:Key="partInfo">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding PartInfo}" />
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <TabControl TabStripPlacement="Left">
+            <TabItem Header="Etusivu" >
+                <StackPanel Loaded="StackPanel_Loaded">
+                    <TextBlock x:Name="txbWelcome" Text="{Binding}" FontSize="35" />
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Luo keikka">
+                <StackPanel>
+                    <TabControl TabStripPlacement="Top">
+                        <TabItem Header="Jälleenmyyjän tiedot">
+                            <StackPanel>
+                                <TextBlock Text="Valitse jälleenmyyjä: " />
+                                <StackPanel Orientation="Horizontal">
+                                    <ComboBox x:Name="cmbDealers" ItemsSource="{Binding}" Loaded="UpdateDealersList" LostFocus="UpdateDealersList" SelectionChanged="CmbDealers_SelectionChanged" />
+                                <Button x:Name="btnAddDealer" Content="Lisää jälleenmyyjä" Click="BtnAddDealer_Click" />
+                                </StackPanel>
+                                <TextBlock Text="Nimi: "/>
+                                <TextBlock x:Name="txbDealerName" />
+                                <TextBlock Text="Osoite: " />
+                                <TextBlock x:Name="txbDealerAddress" />
+                                <TextBlock Text="Kaupunki: " />
+                                <TextBlock x:Name="txbDealerCity" />
+                                <TextBlock Text="Postinumero: " />
+                                <TextBlock x:Name="txbPostcode" />
+                                <TextBlock Text="Puhelin numero: " />
+                                <TextBlock x:Name="txbDealerPhone" />
+                                <TextBlock Text="Email: " />
+                                <TextBlock x:Name="txbEmail" />
+                                <Button x:Name="btnEditDealer" Content="Päivitä jälleenmyyjän tietoja" Click="BtnEditDealer_Click" />
+                            </StackPanel>    
+                        </TabItem>
+                        <TabItem Header="Asiakkaan tiedot">
+                            <StackPanel>
+                                <TextBlock Text="Valitse asiakas: " />
+                            <StackPanel Orientation="Horizontal">
+                                <ComboBox x:Name="cmbCustomers" ItemsSource="{Binding}" Loaded="UpdateCustomerList" LostFocus="UpdateCustomerList" SelectionChanged="CmbCustomers_SelectionChanged" />
+                                <Button x:Name="btnAddCustomer" Content="Lisää asiakas" Click="BtnAddCustomer_Click"  />
+                            </StackPanel>
+                            <TextBlock Text="Nimi: "/>
+                            <TextBlock x:Name="txbCustName" />
+                            <TextBlock Text="Osoite: " />
+                            <TextBlock x:Name="txbCustAddress" />
+                            <TextBlock Text="Kaupunki: " />
+                            <TextBlock x:Name="txbCustCity" />
+                            <TextBlock Text="Postinumero: " />
+                            <TextBlock x:Name="txbCustPostcode" />
+                            <TextBlock Text="Puhelin numero: " />
+                            <TextBlock x:Name="txbCustPhone" />
+                            <TextBlock Text="Email: " />
+                            <TextBlock x:Name="txbCustEmail" />
+                            <Button x:Name="btnEditCustomer" Content="Päivitä asiakkaan tietoja" Click="BtnEditCustomer_Click" />
+                </StackPanel>
+            </TabItem>
+                        <TabItem Header="Laitteen tiedot" Loaded="TabItem_Loaded" >
+                            <StackPanel>
+                                <TextBlock Text="Merkki: " />
+                                <ComboBox x:Name="cmbBrand" ItemsSource="{Binding}" SelectionChanged="CmbBrand_SelectionChanged" />
+                                <TextBlock Text="Malli: " />
+                                <StackPanel Orientation="Horizontal">
+                                    <ComboBox x:Name="cmbModel" SelectionChanged="CmbModel_SelectionChanged" />
+                                    <Button x:Name="btnAddModel" Content="Lisää malli" Click="BtnAddModel_Click" />
+                                </StackPanel>    
+                                <TextBlock Text="Sarjanumero:" />
+                                <TextBox x:Name="txbSerial" />
+                                <TextBlock Text="Ostopäivä: " />
+                                <DatePicker x:Name="dpPurchaseDate" IsTodayHighlighted="True" />
+                                <TextBlock Text="Takuu: " />
+                                <ComboBox x:Name="cmbWarranty" >
+                                    <ComboBoxItem Content="Kyllä" />
+                                    <ComboBoxItem Content="Ei" />
+                                </ComboBox>
+                                <TextBlock Text="Viankuvaus: " />
+                                <TextBox x:Name="txbFault" MinHeight="150" />
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem Header="Yhteenveto" x:Name="tiOverview" GotFocus="TiOverview_GotFocus" >
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Jälleenmyyjä: " FontSize="15" FontWeight="Bold" />
+                                    <TextBlock x:Name="txtDealerName" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Asiakas: " FontSize="15" FontWeight="Bold" />
+                                    <TextBlock x:Name="txtCustomerName" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Laite: " FontSize="15" FontWeight="Bold" />
+                                    <TextBlock x:Name="txtUnit" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Vian kuvaus: " FontSize="15" FontWeight="Bold" />
+                                    <TextBlock x:Name="txtFault" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Takuu: " FontSize="15" FontWeight="Bold" />
+                                    <TextBlock x:Name="txtWarranty" />
+                                </StackPanel>
+                                <Button x:Name="btnAddCase" Content="Luo keikka" Click="BtnAddCase_Click"/>
+                            </StackPanel>
+                        </TabItem>
+                    </TabControl>
+             </StackPanel>
+            </TabItem>
+            <TabItem Header="Varaosat" >
+                <StackPanel  Loaded="StackPanel_Loaded_1" >
+                    <ListView x:Name="lsvOrderedParts" ItemsSource="{Binding}" ItemTemplate="{StaticResource partInfo}" MouseDoubleClick="LsvOrderedParts_MouseDoubleClick" />
+                </StackPanel>
+            </TabItem>
+        </TabControl>    
+    </Grid>
+</UserControl>

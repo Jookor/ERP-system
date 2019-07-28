@@ -1,0 +1,52 @@
+﻿<Window x:Class="BetterWay.Views.SendMessageView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BetterWay.Views"
+        mc:Ignorable="d"
+        Title="SendMessageView" Height="500" Width="400">
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel>
+                <StackPanel x:Name="spCustomerInfo" Margin="5">
+                    <TextBlock Text="Asiakkaan tiedot: " FontWeight="Bold"/>
+                    <TextBlock Text="Asiakkaan nimi: " />
+                    <TextBlock Text="{Binding Name}" />
+                    <TextBlock Text="Osoite: " />
+                    <TextBlock Text="{Binding Address}" />
+                    <TextBlock Text="Kaupunki: " />
+                    <TextBlock Text="{Binding City}" />
+                    <TextBlock Text="Postinumero: " />
+                    <TextBlock Text="{Binding Postcode}" />
+                    <TextBlock Text="Puhelin numero: " />
+                    <TextBlock Text="{Binding Phone}" />
+                    <TextBlock Text="Sähköposti: " />
+                    <TextBlock Text="{Binding Email}" />
+                </StackPanel>
+                <StackPanel x:Name="spDealerInfo" Margin="5">
+                    <TextBlock Text="Jälleenmyyjän tiedot" FontWeight="Bold" />
+                    <TextBlock Text="Asiakkaan nimi: " />
+                    <TextBlock Text="{Binding Name}" />
+                    <TextBlock Text="Osoite: " />
+                    <TextBlock Text="{Binding Address}" />
+                    <TextBlock Text="Kaupunki: " />
+                    <TextBlock Text="{Binding City}" />
+                    <TextBlock Text="Postinumero: " />
+                    <TextBlock Text="{Binding Postcode}" />
+                    <TextBlock Text="Puhelin numero: " />
+                    <TextBlock Text="{Binding Phone}" />
+                    <TextBlock Text="Sähköposti: " />
+                    <TextBlock Text="{Binding Email}" />
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Margin="10">
+                <CheckBox x:Name="cbCustomer" Content="Lähetä viesti asiakkaalle" Checked="CbCustomer_Checked" />
+                <CheckBox x:Name="cbDealer" Content="Lähetä viesti jälleenmyyjälle" Checked="CbDealer_Checked" />
+                <TextBlock Text="Viesti: " FontWeight="Bold" />
+                <TextBox x:Name="txtMessage" Height="150" Width="150" TextWrapping="Wrap"/>
+                <Button x:Name="btnSendMessage" Content="Lähetä viesti" Click="BtnSendMessage_Click" />
+            </StackPanel>                
+        </StackPanel>
+    </Grid>
+</Window>

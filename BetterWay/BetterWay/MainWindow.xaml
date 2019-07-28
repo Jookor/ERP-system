@@ -1,0 +1,27 @@
+﻿<Window x:Class="BetterWay.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BetterWay"
+        xmlns:viewmodels="clr-namespace:BetterWay.ViewModels"
+        xmlns:views="clr-namespace:BetterWay.Views"
+        mc:Ignorable="d"
+        Title="BetterWay v.0.01" Height="450" Width="800">
+    <Window.Resources>
+        <DataTemplate x:Name="logisticViewTemplate" DataType="{x:Type viewmodels:LogisticViewModel}">
+            <views:LogisticView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="supervisorViewTemplate" DataType="{x:Type viewmodels:SupervisorViewModel}">
+            <views:SupervisorView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="technicianViewTemplate" DataType="{x:Type viewmodels:TechnicianViewModel}">
+            <views:TechnicianView DataContext="{Binding}"/>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <StackPanel>
+            <ContentControl Content="{Binding}"/>
+        </StackPanel>    
+    </Grid>
+</Window>

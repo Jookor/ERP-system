@@ -1,0 +1,42 @@
+﻿<Window x:Class="BetterWay.Views.EditCustomerInfoView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BetterWay.Views"
+        mc:Ignorable="d"
+        Title="EditCustomerInfoView" Height="450" Width="450">
+    <Grid>
+        <StackPanel x:Name="spCustomer">
+            <StackPanel Orientation="Horizontal">
+                <ComboBox x:Name="cmbCustomers" ItemsSource="{Binding}" SelectionChanged="CmbCustomers_SelectionChanged" Margin="10 10 0 0"/>
+                <Button x:Name="btnUpdateCustomer" Content="Päivitä tiedot" Margin="10 10 0 0" Click="BtnUpdateCustomer_Click"/>
+                <Button x:Name="btnAddCustomer" Content="Lisää asiakas" Margin="10 10 0 0" Click="BtnAddCustomer_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Nimi: " FontWeight="Bold"/>
+                <TextBlock Text="{Binding Name}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Osoite: " FontWeight="Bold"/>
+                <TextBlock Text="{Binding Address}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Kaupunki: " FontWeight="Bold"/>
+                <TextBlock Text="{Binding City}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Postiosoite: " FontWeight="Bold"/>
+                <TextBlock Text="{Binding Postcode}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Puhelin: " FontWeight="Bold"/>
+                <TextBlock Text="{Binding Phone}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Sähköposti: " FontWeight="Bold"/>
+                <TextBlock Text="{Binding Email}" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

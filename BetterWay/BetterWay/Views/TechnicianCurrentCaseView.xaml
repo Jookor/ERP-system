@@ -1,0 +1,56 @@
+﻿<Window x:Class="BetterWay.Views.TechnicianCurrentCaseView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BetterWay.Views"
+        mc:Ignorable="d"
+        Title="TechnicianCurrentCaseView" Height="450" Width="420">
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="btnChangeCaseInfo" Content="Muokkaa tietoja" Click="BtnChangeCaseInfo_Click" Margin="5 5 0 0"/>
+                <Button x:Name="btnSendMessage" Content="Lähetä viesti" Margin="5 5 0 0" Click="BtnSendMessage_Click"/>
+                <Button x:Name="btnOrderParts" Content="Varaosa tilaus" Margin="5 5 0 0" Click="BtnOrderParts_Click" />
+                <Button x:Name="btnCloseCase" Content="Työ valmis" Margin="5 5 0 0" Click="BtnCloseCase_Click"/>
+                <StackPanel Margin="5 5 0 0">
+                    <TextBlock Text="Muuta tilaa"/>
+                    <ComboBox x:Name="cmbStatus" MaxWidth="60" SelectionChanged="CmbStatus_SelectionChanged" >
+                        <ComboBoxItem Content="Diagnose"/>
+                        <ComboBoxItem Content="Waiting parts" />
+                        <ComboBoxItem Content="Waiting customer" />
+                        <ComboBoxItem Content="Cost estimate" />
+                        <ComboBoxItem Content="Waiting credit" />
+                        <ComboBoxItem Content="Ready" />
+                    </ComboBox>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel x:Name="spInformation" Loaded="SpInformation_Loaded" Margin="5 0 0 0">
+                <StackPanel Orientation="Horizontal" Background="AliceBlue" Margin="5">
+                    <TextBlock Text="Asiakas: " FontWeight="Bold"/>
+                    <TextBlock Text="{Binding ClientName}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Background="AliceBlue" Margin="5">
+                    <TextBlock Text="Jälleenmyyjä: " FontWeight="Bold"/>
+                    <TextBlock Text="{Binding DealerName}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Background="AliceBlue" Margin="5">
+                    <TextBlock Text="Laitteen tiedot: " FontWeight="Bold"/>
+                    <TextBlock Text="{Binding DeviceInfo}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Background="AliceBlue" Margin="5">
+                    <TextBlock Text="Sarjanumero: " FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Serial}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Background="AliceBlue" Margin="5">
+                    <TextBlock Text="Viankuvaus: " FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Fault}" />
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Margin="5 0 5 0">
+                <TextBlock Text="Loki: " FontWeight="Bold" Background="AliceBlue" Margin="5"/>
+                <DataGrid x:Name="dgCaseLog" ItemsSource="{Binding}"  BorderThickness="0" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
