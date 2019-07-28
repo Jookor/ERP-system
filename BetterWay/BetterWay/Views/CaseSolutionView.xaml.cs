@@ -33,6 +33,7 @@ namespace BetterWay.Views
             this.job = job;
             spDeviceInfo.DataContext = this.job;
             txtSolution.Text = CaseSolutionViewModel.GetCaseSolution(job);
+            txbCaseInfo.Text = "Työtilaus: " + this.job.Id.ToString();
         }
 
         private void BtnClose_Click(object sender, RoutedEventArgs e)

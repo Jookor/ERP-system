@@ -5,22 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BetterWay.Views"
         mc:Ignorable="d"
-        Title="CaseSolutionView" Height="450" Width="800">
+        Title="CaseSolutionView" Height="280" Width="400" WindowStyle="None">
     <Grid>
-        <StackPanel>
+        <StackPanel Margin="10">
             <StackPanel x:Name="spDeviceInfo">
-                <TextBlock Text="Laite: " />
+                <TextBlock x:Name="txbCaseInfo" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+                <TextBlock Text="Laite: " FontWeight="Bold"/>
                 <TextBlock Text="{Binding DeviceInfo}" />
-                <TextBlock Text="Asiakas: " />
+                <TextBlock Text="Asiakas: " FontWeight="Bold"/>
                 <TextBlock Text="{Binding ClientName}" />
-                <TextBlock Text="Jälleenmyyjä: " />
+                <TextBlock Text="Jälleenmyyjä: " FontWeight="Bold"/>
                 <TextBlock Text="{Binding DealerName}" />
-                <TextBlock Text="Viankuvaus: " />
+                <TextBlock Text="Viankuvaus: " FontWeight="Bold"/>
                 <TextBlock Text="{Binding Fault}" />
-                <TextBlock Text="Työnkuvaus: " />
+                <TextBlock Text="Työnkuvaus: " FontWeight="Bold"/>
                 <TextBlock x:Name="txtSolution" TextWrapping="Wrap"/>
             </StackPanel>
-            <Button x:Name="btnClose" Content="Sulje ikkuna" Click="BtnClose_Click" />
+            <Button x:Name="btnClose" Content="Sulje ikkuna" Click="BtnClose_Click" Margin="0 10 0 0"/>
         </StackPanel>
     </Grid>
 </Window>
