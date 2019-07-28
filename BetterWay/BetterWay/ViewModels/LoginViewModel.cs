@@ -12,6 +12,7 @@ namespace BetterWay.ViewModels
     {
         public static User CheckUser(string name, string password)
         {
+            //Check if user is in the database if not throw error
             try
             {
                 string request = $"SELECT Id,Name,UserType FROM Users WHERE Name='{name}' AND Password='{password}'";
@@ -27,6 +28,7 @@ namespace BetterWay.ViewModels
 
         public static MainWindow SetView(User user, MainWindow main)
         {
+            //Selects the right view to the mainwindow
             if (user.UserType.Equals("technician"))
             {
                 main.DataContext = new TechnicianView(user);
