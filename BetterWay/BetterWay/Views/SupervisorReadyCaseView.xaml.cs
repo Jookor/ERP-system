@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BetterWay.ViewModels;
+using BetterWay.Models;
 
 namespace BetterWay.Views
 {
@@ -21,6 +22,7 @@ namespace BetterWay.Views
     /// </summary>
     public partial class SupervisorReadyCaseView : UserControl
     {
+        private Case job;
         public SupervisorReadyCaseView()
         {
             InitializeComponent();
@@ -29,6 +31,13 @@ namespace BetterWay.Views
         private void LsvReadyCases_Loaded(object sender, RoutedEventArgs e)
         {
             lsvReadyCases.DataContext = TechnicianViewModel.GetWorkOrders("'Ready'");
+        }
+
+        private void LsvReadyCases_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            job = (Case)lsvReadyCases.SelectedItem;
+            CaseSolutionView view = new CaseSolutionView(job);
+            view.Show();
         }
     }
 }

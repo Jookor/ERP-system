@@ -150,3 +150,5 @@ D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\BetterWay.
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\BetterWay.csproj.CopyComplete
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\BetterWay.exe
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\BetterWay.pdb
+D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\CaseSolutionView.g.cs
+D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\CaseSolutionView.baml

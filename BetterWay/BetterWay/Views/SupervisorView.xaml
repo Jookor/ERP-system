@@ -8,7 +8,10 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <StackPanel>
-            <StackPanel Orientation="Horizontal">
+            <StackPanel>
+                <TextBlock Text="Supervisor view" Margin="10" FontSize="20" FontWeight="Bold"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10 0 0 0">
                 <Button x:Name="btnUpComingCases" Content="Tulevat työt" Margin="0 0 5 0" Click="BtnUpComingCases_Click" />
                 <Button x:Name="btnSkippedCases" Content="Ohitetut työt" Margin="0 0 5 0" Click="BtnSkippedCases_Click" />
                 <Button x:Name="btnReadyCases" Content="Valmiit työt" Click="BtnReadyCases_Click" />
