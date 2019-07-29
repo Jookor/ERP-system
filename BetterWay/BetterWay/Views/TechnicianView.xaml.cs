@@ -57,6 +57,7 @@ namespace BetterWay.Views
         //Setting case to diagnose status and show the started case
         private void BtnStart_Click(object sender, RoutedEventArgs e)
         {
+            selected = (Case)lsvComingCases.SelectedItem;
             try
             {
                 TechnicianViewModel.SetCaseStatus(selected, "Diagnose");
@@ -64,7 +65,7 @@ namespace BetterWay.Views
             catch (Exception ex)
             {
 
-                MessageBox.Show(selected.Id.ToString() + " " + ex.Message);
+                MessageBox.Show(ex.Message);
             }
             TechnicianCurrentCaseView view = new TechnicianCurrentCaseView(selected, LoggedUser);
             view.Show();
