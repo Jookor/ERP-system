@@ -28,6 +28,7 @@ namespace BetterWay.Models
                         user.Id = dr.GetInt32(0);
                         user.Name = dr.GetString(1);
                         user.UserType = dr.GetString(2);
+                        conn.Close();
                         return user;
                     }
                 }
@@ -56,7 +57,9 @@ namespace BetterWay.Models
                         conn.Open();
                         SQLiteDataReader dr = com.ExecuteReader();
                         dr.Read();
-                        return dr.GetString(0).ToString();
+                        string temp = dr.GetString(0).ToString();
+                        conn.Close();
+                        return temp;
                     }
                 }
                 else
@@ -84,7 +87,9 @@ namespace BetterWay.Models
                         conn.Open();
                         SQLiteDataReader dr = com.ExecuteReader();
                         dr.Read();
-                        return dr.GetInt32(0);
+                        int temp = dr.GetInt32(0);
+                        conn.Close();
+                        return temp;
                     }
                 }
                 else
@@ -112,8 +117,9 @@ namespace BetterWay.Models
                         using (SQLiteCommand command = new SQLiteCommand(sqlrequest, conn))
                         {
                             command.ExecuteNonQuery();
+                            conn.Close();
                         }
-                        conn.Close();
+                        
                     }
                 }
                 else
@@ -142,9 +148,9 @@ namespace BetterWay.Models
                         {
                             DataTable dt = new DataTable();
                             da.Fill(dt);
+                            conn.Close();
                             return dt;
                         }
-                        
                     }
                 }
                 else
@@ -189,6 +195,7 @@ namespace BetterWay.Models
                         {
                             customer.Dealer = false;
                         }
+                        conn.Close();
                         return customer;
                         
                     }
@@ -236,6 +243,7 @@ namespace BetterWay.Models
                         {
                             customer.Dealer = false;
                         }
+                        conn.Close();
                         return customer;
 
                     }

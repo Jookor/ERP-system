@@ -33,7 +33,15 @@ namespace BetterWay.Views
             InitializeComponent();
             this.part = part;
             spReceivePart.DataContext = part;
-            workOrder = TechnicianViewModel.GetWorkOrder(part.CaseId);
+            try
+            {
+                workOrder = TechnicianViewModel.GetWorkOrder(part.CaseId);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Työtilauksen haku epäonnistui");
+            }
         }
 
         private void BtnReceivePart_Click(object sender, RoutedEventArgs e)
@@ -43,13 +51,13 @@ namespace BetterWay.Views
             try
             {
                 ReceivePartViewModel.SetReceived(part, workOrder);
+                MessageBox.Show("Varaosa vastaanotettu");
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Varaosan vastaanotto ei onnistunut. \n"+ex.Message);
             }
-            MessageBox.Show("Varaosa vastaanotettu");
             this.Close();
             
         }

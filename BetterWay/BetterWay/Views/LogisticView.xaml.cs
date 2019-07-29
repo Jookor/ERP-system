@@ -231,7 +231,6 @@ namespace BetterWay.Views
         private void LsvOrderedParts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Part part = (Part)lsvOrderedParts.SelectedItem;
-            int id = part.Id;
             ReceivePartView view = new ReceivePartView(part);
             view.Show();
         }
