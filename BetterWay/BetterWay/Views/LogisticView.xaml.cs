@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -230,9 +231,12 @@ namespace BetterWay.Views
 
         private void LsvOrderedParts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Part part = (Part)lsvOrderedParts.SelectedItem;
-            ReceivePartView view = new ReceivePartView(part);
+            Sparepart = (Part)lsvOrderedParts.SelectedItem;
+            ReceivePartView view = new ReceivePartView(Sparepart);
+            //I had to but this sleep command here because the database isn't ready yet with the other requests
+            Thread.Sleep(3000);
             view.Show();
         }
+
     }
 }

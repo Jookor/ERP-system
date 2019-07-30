@@ -27,7 +27,7 @@
                             <StackPanel>
                                 <TextBlock Text="Valitse jälleenmyyjä: " />
                                 <StackPanel Orientation="Horizontal">
-                                    <ComboBox x:Name="cmbDealers" ItemsSource="{Binding}" Loaded="UpdateDealersList" LostFocus="UpdateDealersList" SelectionChanged="CmbDealers_SelectionChanged" />
+                                    <ComboBox x:Name="cmbDealers" ItemsSource="{Binding}" Loaded="UpdateDealersList" SelectionChanged="CmbDealers_SelectionChanged" />
                                 <Button x:Name="btnAddDealer" Content="Lisää jälleenmyyjä" Click="BtnAddDealer_Click" />
                                 </StackPanel>
                                 <TextBlock Text="Nimi: "/>
@@ -49,7 +49,7 @@
                             <StackPanel>
                                 <TextBlock Text="Valitse asiakas: " />
                             <StackPanel Orientation="Horizontal">
-                                <ComboBox x:Name="cmbCustomers" ItemsSource="{Binding}" Loaded="UpdateCustomerList" LostFocus="UpdateCustomerList" SelectionChanged="CmbCustomers_SelectionChanged" />
+                                <ComboBox x:Name="cmbCustomers" ItemsSource="{Binding}" Loaded="UpdateCustomerList" SelectionChanged="CmbCustomers_SelectionChanged" />
                                 <Button x:Name="btnAddCustomer" Content="Lisää asiakas" Click="BtnAddCustomer_Click"  />
                             </StackPanel>
                             <TextBlock Text="Nimi: "/>
@@ -69,22 +69,30 @@
             </TabItem>
                         <TabItem Header="Laitteen tiedot" Loaded="TabItem_Loaded" >
                             <StackPanel>
-                                <TextBlock Text="Merkki: " />
-                                <ComboBox x:Name="cmbBrand" ItemsSource="{Binding}" SelectionChanged="CmbBrand_SelectionChanged" />
-                                <TextBlock Text="Malli: " />
-                                <StackPanel Orientation="Horizontal">
-                                    <ComboBox x:Name="cmbModel" SelectionChanged="CmbModel_SelectionChanged" />
+                                <StackPanel Orientation="Horizontal" Margin="5 5 0 0">
+                                    <TextBlock Text="Merkki: " Width="75"/>
+                                    <ComboBox x:Name="cmbBrand" ItemsSource="{Binding}" SelectionChanged="CmbBrand_SelectionChanged" Width="100"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="5 5 0 0">
+                                    <TextBlock Text="Malli: " Width="75"/>
+                                    <ComboBox x:Name="cmbModel" SelectionChanged="CmbModel_SelectionChanged" Width="100" Margin="0 0 5 0"/>
                                     <Button x:Name="btnAddModel" Content="Lisää malli" Click="BtnAddModel_Click" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="5 5 0 0">
+                                    <TextBlock Text="Sarjanumero:" Width="75"/>
+                                    <TextBox x:Name="txbSerial" Width="100"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="5 5 0 0">
+                                    <TextBlock Text="Ostopäivä: " Width="75"/>
+                                    <DatePicker x:Name="dpPurchaseDate" IsTodayHighlighted="True" Width="100"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="5 5 0 0">
+                                    <TextBlock Text="Takuu: " Width="75"/>
+                                    <ComboBox x:Name="cmbWarranty" Width="100">
+                                        <ComboBoxItem Content="Kyllä" />
+                                        <ComboBoxItem Content="Ei" />
+                                    </ComboBox>
                                 </StackPanel>    
-                                <TextBlock Text="Sarjanumero:" />
-                                <TextBox x:Name="txbSerial" />
-                                <TextBlock Text="Ostopäivä: " />
-                                <DatePicker x:Name="dpPurchaseDate" IsTodayHighlighted="True" />
-                                <TextBlock Text="Takuu: " />
-                                <ComboBox x:Name="cmbWarranty" >
-                                    <ComboBoxItem Content="Kyllä" />
-                                    <ComboBoxItem Content="Ei" />
-                                </ComboBox>
                                 <TextBlock Text="Viankuvaus: " />
                                 <TextBox x:Name="txbFault" MinHeight="150" />
                             </StackPanel>
