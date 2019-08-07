@@ -154,3 +154,10 @@ D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\BetterWay.
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\BetterWay.csprojAssemblyReference.cache
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\CloseCreditCaseView.g.cs
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\CloseCreditCaseView.baml
+D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\BouncyCastle.Crypto.dll
+D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\Google.Protobuf.dll
+D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\MySql.Data.dll
+D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\Renci.SshNet.dll
+D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\Google.Protobuf.xml
+D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\MySql.Data.xml
+D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\Renci.SshNet.xml

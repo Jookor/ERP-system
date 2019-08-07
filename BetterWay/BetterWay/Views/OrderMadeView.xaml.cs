@@ -53,6 +53,7 @@ namespace BetterWay.Views
         {
             PrintDialog printdlg = new PrintDialog();
             printdlg.PrintVisual(cpv,"Workorder printing");
+            this.Close();
         }
     }
 }
