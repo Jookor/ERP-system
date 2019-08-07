@@ -234,7 +234,6 @@ namespace BetterWay.Views
             Sparepart = (Part)lsvOrderedParts.SelectedItem;
             ReceivePartView view = new ReceivePartView(Sparepart);
             //I had to but this sleep command here because the database isn't ready yet with the other requests
-            Thread.Sleep(3000);
             view.Show();
         }
 
