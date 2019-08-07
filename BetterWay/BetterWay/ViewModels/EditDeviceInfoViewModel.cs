@@ -16,7 +16,7 @@ namespace BetterWay.ViewModels
                              $"ModelName='{model}'," +
                              $"SerialNumber='{serial}'," +
                              $"Fault='{fault}' " +
-                             $"WHERE Id={id}";
+                             $"WHERE Id={id};";
             DA.AddToDb(request);
         }
 

@@ -74,10 +74,10 @@ D:\Project\BetterWay\BetterWay\obj\Debug\BetterWay.csproj.CopyComplete
 D:\Project\BetterWay\BetterWay\obj\Debug\BetterWay.exe
 D:\Project\BetterWay\BetterWay\obj\Debug\BetterWay.pdb
 D:\Project\BetterWay\BetterWay\obj\Debug\BetterWay.csprojAssemblyReference.cache
-D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\BetterWay.pdb
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\database.db
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\BetterWay.exe.config
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\BetterWay.exe
+D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\BetterWay.pdb
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\EntityFramework.dll
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\EntityFramework.SqlServer.dll
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\System.Data.SQLite.dll
@@ -152,5 +152,3 @@ D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\BetterWay.
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\BetterWay.exe
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\BetterWay.pdb
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\BetterWay.csprojAssemblyReference.cache
-D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\PleaseWaitWhileView.g.cs
-D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\PleaseWaitWhileView.baml

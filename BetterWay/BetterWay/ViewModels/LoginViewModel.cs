@@ -15,7 +15,7 @@ namespace BetterWay.ViewModels
             //Check if user is in the database if not throw error
             try
             {
-                string request = $"SELECT Id,Name,UserType FROM Users WHERE Name='{name}' AND Password='{password}'";
+                string request = $"SELECT Id,Name,UserType FROM Users WHERE Name='{name}' AND Password='{password}';";
                 User LoggedUser = DA.GetUserFromDb(request);
                 return LoggedUser;
             }

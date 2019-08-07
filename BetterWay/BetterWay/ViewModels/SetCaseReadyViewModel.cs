@@ -13,7 +13,7 @@ namespace BetterWay.ViewModels
         {
             string query = $"INSERT INTO Readycases (CaseId,UserId,Description,ReadyDate)" +
                            $"VALUES ({caseId},{userId},'{description}',Date('now'));" +
-                           $"UPDATE WorkOrder SET Status='Ready' WHERE Id={caseId}";
+                           $"UPDATE WorkOrder SET Status='Ready' WHERE Id={caseId};";
             try
             {
                 DA.AddToDb(query);

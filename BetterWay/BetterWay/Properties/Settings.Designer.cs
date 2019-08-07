@@ -25,7 +25,7 @@ namespace BetterWay.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("D:\\Tietokanta\\database.db")]
+        [global::System.Configuration.DefaultSettingValueAttribute("database.db")]
         public string Database {
             get {
                 return ((string)(this["Database"]));
