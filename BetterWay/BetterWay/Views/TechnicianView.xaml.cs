@@ -216,5 +216,11 @@ namespace BetterWay.Views
                 MessageBox.Show("Uutta työtilausta ei voitu hakea. \n" + ex.Message);
             }
         }
+
+        private void ShowCreditCase(object sender, RoutedEventArgs e)
+        {
+            CloseCreditCaseView view = new CloseCreditCaseView(selected, LoggedUser);
+            view.Show();
+        }
     }
 }

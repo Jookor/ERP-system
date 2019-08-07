@@ -81,6 +81,7 @@
     <Compile Include="ViewModels\AddDealerViewModel.cs" />
     <Compile Include="ViewModels\AddModelViewModel.cs" />
     <Compile Include="ViewModels\CaseSolutionViewModel.cs" />
+    <Compile Include="ViewModels\CloseCreditCaseViewModel.cs" />
     <Compile Include="ViewModels\EditCustomerInfoViewModel.cs" />
     <Compile Include="ViewModels\EditDeviceInfoViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
@@ -111,6 +112,9 @@
     </Compile>
     <Compile Include="Views\CaseSolutionView.xaml.cs">
       <DependentUpon>CaseSolutionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CloseCreditCaseView.xaml.cs">
+      <DependentUpon>CloseCreditCaseView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EditCustomerInfoView.xaml.cs">
       <DependentUpon>EditCustomerInfoView.xaml</DependentUpon>
@@ -205,6 +209,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CaseSolutionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CloseCreditCaseView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

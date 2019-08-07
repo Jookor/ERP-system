@@ -152,3 +152,5 @@ D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\BetterWay.
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\BetterWay.exe
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\BetterWay.pdb
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\BetterWay.csprojAssemblyReference.cache
+D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\CloseCreditCaseView.g.cs
+D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\Views\CloseCreditCaseView.baml

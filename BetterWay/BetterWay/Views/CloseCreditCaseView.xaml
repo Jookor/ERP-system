@@ -1,0 +1,16 @@
+﻿<Window x:Class="BetterWay.Views.CloseCreditCaseView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BetterWay.Views"
+        mc:Ignorable="d"
+        Title="CloseCreditCaseView" Height="200" Width="200">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Hyvitysnumero"/>
+            <TextBox x:Name="txbCreditNote" Width="100" />
+            <Button x:Name="btnCloseCredit" Content="Sulje työtilaus" Width="100" Click="BtnCloseCredit_Click"  />
+        </StackPanel>
+    </Grid>
+</Window>

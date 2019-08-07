@@ -131,7 +131,7 @@
             <TabItem Header="Odottaa hyvitystä" Height="40">
                 <StackPanel Orientation="Horizontal" Loaded="StackPanel_Loaded_2" >
                 <StackPanel>
-                        <ListView x:Name="lsvWaitingCreditOrders" BorderThickness="0" ItemsSource="{Binding}" ItemTemplate="{StaticResource deviceInfo}" SelectionChanged="LsvWaitingCreditOrders_SelectionChanged" MouseDoubleClick="ShowCurrentCase"/>
+                        <ListView x:Name="lsvWaitingCreditOrders" BorderThickness="0" ItemsSource="{Binding}" ItemTemplate="{StaticResource deviceInfo}" SelectionChanged="LsvWaitingCreditOrders_SelectionChanged" MouseDoubleClick="ShowCreditCase"/>
                 </StackPanel>
                 <StackPanel x:Name="spWaitingCredit" >
                     <TextBlock Text="Työnumero: " />
