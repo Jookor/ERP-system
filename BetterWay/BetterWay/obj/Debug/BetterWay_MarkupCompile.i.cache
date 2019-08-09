@@ -16,5 +16,5 @@ D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\App.xaml
 30-99015933
 Login.xaml;MainWindow.xaml;Views\AddCustomerView.xaml;Views\AddDealerView.xaml;Views\AddModelView.xaml;Views\CasePrintView.xaml;Views\CaseSolutionView.xaml;Views\CloseCreditCaseView.xaml;Views\EditCustomerInfoView.xaml;Views\EditDeviceInfoView.xaml;Views\LogisticView.xaml;Views\OrderMadeView.xaml;Views\PartOrderView.xaml;Views\ReceivePartView.xaml;Views\SendMessageView.xaml;Views\SetCaseReadyView.xaml;Views\SkippedCaseHandlingView.xaml;Views\SkippedCaseView.xaml;Views\SupervisorComingCasesView.xaml;Views\SupervisorReadyCaseView.xaml;Views\SupervisorSkippedCaseView.xaml;Views\SupervisorView.xaml;Views\TechnicianCurrentCaseView.xaml;Views\TechnicianView.xaml;Views\UpdateCaseView.xaml;Views\UpdateCustomerView.xaml;Views\UpdateDealerView.xaml;
 
-True
+False
 

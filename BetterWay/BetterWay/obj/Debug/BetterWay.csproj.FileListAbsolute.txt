@@ -161,3 +161,7 @@ D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\Renci.SshN
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\Google.Protobuf.xml
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\MySql.Data.xml
 D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\Renci.SshNet.xml
+D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\BetterWay.exe.manifest
+D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\bin\Debug\BetterWay.application
+D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\BetterWay.exe.manifest
+D:\Project Backup\tyonohjausjarjestelma\BetterWay\BetterWay\obj\Debug\BetterWay.application

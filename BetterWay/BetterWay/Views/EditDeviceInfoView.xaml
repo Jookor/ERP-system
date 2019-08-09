@@ -23,7 +23,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="btnMakeChanges" Content="Tallenna muutokset" Margin="10" Click="BtnMakeChanges_Click"/>
-                <Button x:Name="btnExitWithoutChanges" Content="Poistu(Ei tallenna muutoksia)" Margin="10"/>
+                <Button x:Name="btnExitWithoutChanges" Content="Poistu(Ei tallenna muutoksia)" Margin="10" Click="BtnExitWithoutChanges_Click" />
             </StackPanel>    
         </StackPanel>
     </Grid>

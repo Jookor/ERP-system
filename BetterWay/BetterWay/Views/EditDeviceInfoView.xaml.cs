@@ -64,5 +64,10 @@ namespace BetterWay.Views
             this.Close();
             MessageBox.Show("Muutokset tallennettu!");
         }
+
+        private void BtnExitWithoutChanges_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
